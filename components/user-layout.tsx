@@ -3,7 +3,7 @@ import Layout from './layout'
 
 const UserLayout = ({ children }: { children: ReactNode }) => (
   <Layout>
-    <div className='w-screen h-screen flex items-center justify-center'>
+    <div className='w-screen h-screen flex flex-col items-center justify-center'>
       {children}
     </div>
   </Layout>
