@@ -1,18 +1,18 @@
-import { useState } from 'react'
 import Input from '@mui/material/Input'
 import Button from '@mui/material/Button'
+import { useModule } from '@yorjs/core'
 import UserLayout from '../../components/user-layout'
+import { userModule } from '../../common/user/user.module'
 
 const UserSignIn = () => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const { username, password, signIn } = useModule(userModule)
 
   return (
     <UserLayout>
-      <Input value={username} placeholder="Username" onChange={event => setUsername(event.target.value)} />
-      <Input value={password} placeholder="Password" onChange={event => setPassword(event.target.value)} />
+      <Input value={username.value} placeholder="Username" onChange={event => username.value = event.target.value} />
+      <Input value={password.value} placeholder="Password" onChange={event => password.value = event.target.value} />
 
-      <Button variant="contained">Sign In</Button>
+      <Button variant="contained" onClick={signIn}>Sign In</Button>
     </UserLayout>
   )
 }
