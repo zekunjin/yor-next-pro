@@ -1,10 +1,10 @@
-import Layout from './layout copy'
+import Layout from './layout'
 import type { ReactNode } from 'react'
 
 const UserLayout = ({ children }: { children: ReactNode }) => (
   <Layout>
-    <div>
-
+    <div className='w-screen h-screen flex items-center justify-center'>
+      {children}
     </div>
   </Layout>
 )
