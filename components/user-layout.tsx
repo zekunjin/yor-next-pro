@@ -1,5 +1,5 @@
-import Layout from './layout'
 import type { ReactNode } from 'react'
+import Layout from './layout'
 
 const UserLayout = ({ children }: { children: ReactNode }) => (
   <Layout>

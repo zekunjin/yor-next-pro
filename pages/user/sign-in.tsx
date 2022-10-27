@@ -1,4 +1,4 @@
-import UserLayout from "../../components/user-layout"
+import UserLayout from '../../components/user-layout'
 
 const UserSignIn = () => (
   <UserLayout>
