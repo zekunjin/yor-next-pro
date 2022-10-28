@@ -3,8 +3,10 @@ import Link from 'next/link'
 import { LoadingButton } from '@mui/lab'
 import { Box, TextField } from '@mui/material'
 import { useState } from 'react'
+import Image from 'next/image'
 import UserLayout from '../../components/user-layout'
 import { userModule } from '../../common/modules/user/user.module'
+import illustrationDashboard from '../../assets/illustration_dashboard.png'
 
 const UserSignIn = () => {
   const { username, password, signIn } = useModule(userModule)
@@ -19,7 +21,9 @@ const UserSignIn = () => {
   return (
     <UserLayout>
       <Box className="w-screen h-screen flex">
-        <Box className="flex items-center justify-center flex-1 bg-gray-100"></Box>
+        <Box className="flex items-center justify-center flex-1 bg-gray-100">
+          <Image src={illustrationDashboard} alt="illustration dashboard" />
+        </Box>
 
         <Box sx={{ width: '480px' }} className="flex flex-col items-center justify-center">
           <Box className="w-full px-16 flex flex-col box-border">
