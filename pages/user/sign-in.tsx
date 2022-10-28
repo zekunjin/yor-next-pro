@@ -2,11 +2,19 @@ import { useModule } from '@yorjs/core'
 import Link from 'next/link'
 import { LoadingButton } from '@mui/lab'
 import { Box, TextField } from '@mui/material'
+import { useState } from 'react'
 import UserLayout from '../../components/user-layout'
 import { userModule } from '../../common/modules/user/user.module'
 
 const UserSignIn = () => {
   const { username, password, signIn } = useModule(userModule)
+  const [loading, setLoading] = useState(false)
+
+  const handleSignIn = async () => {
+    setLoading(true)
+    await signIn()
+    setLoading(false)
+  }
 
   return (
     <UserLayout>
@@ -30,7 +38,7 @@ const UserSignIn = () => {
               <Link href="/">Forget password?</Link>
             </Box>
 
-            <LoadingButton loading={false} variant="contained" size="large" className="mt-5" onClick={signIn}>Sign In</LoadingButton>
+            <LoadingButton loading={loading} variant="contained" size="large" className="mt-5" onClick={handleSignIn}>Sign In</LoadingButton>
           </Box>
         </Box>
       </Box>
