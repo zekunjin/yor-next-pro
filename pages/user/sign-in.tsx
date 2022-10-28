@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { LoadingButton } from '@mui/lab'
 import { Box, TextField } from '@mui/material'
 import { useState } from 'react'
-import UserLayout from '../../layouts/user-layout'
+import UserLayout from '../../components/user-layout'
 import { userModule } from '../../common/modules/user/user.module'
 
 const UserSignIn = () => {

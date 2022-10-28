@@ -10,7 +10,7 @@ const UserLayout = ({ children }: { children: ReactNode }) => (
       <Box className="w-screen h-screen flex">
         <Box className="flex flex-col items-center justify-center flex-1 bg-gray-100">
           <Box className="text-3xl font-bold mb-12">Hi, Welcome back</Box>
-          <Image src={illustrationDashboard} alt="illustration dashboard" />
+          <Image src={illustrationDashboard} priority={true} alt="illustration dashboard" />
         </Box>
 
         <Box sx={{ width: '480px' }} className="h-full">
