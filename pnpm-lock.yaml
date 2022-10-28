@@ -8,7 +8,7 @@ specifiers:
   '@types/node': 18.11.5
   '@types/react': 18.0.23
   '@types/react-dom': 18.0.7
-  '@yorjs/core': 2.0.0-rc.0
+  '@yorjs/core': 2.0.0-rc.2
   autoprefixer: ^10.4.12
   eslint: 8.26.0
   eslint-config-next: 13.0.0
@@ -24,7 +24,7 @@ dependencies:
   '@emotion/react': 11.10.4_i2izv7j3km4zzxbpzq2d4xtojy
   '@emotion/styled': 11.10.4_acpyfrvj6vjxfu5qsyzb4chs4y
   '@mui/material': 5.10.11_uliubsjsh475tiqsbpj3cyikla
-  '@yorjs/core': 2.0.0-rc.0
+  '@yorjs/core': 2.0.0-rc.2
   next: 13.0.0_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -871,8 +871,8 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@yorjs/core/2.0.0-rc.0:
-    resolution: {integrity: sha512-GKIb88SXlvbbBvyELvF9ahlZZOeTq5O9xmeecjsCogonpOPvBNLD3/vwmZcC0eQNHjyySHTjC1LxDOiveynFUw==}
+  /@yorjs/core/2.0.0-rc.2:
+    resolution: {integrity: sha512-R6fxFaQIJioJO4ktgSsfi2YGNl13NTFBYgb/5o/noASW4haUqwxiKPQDM+PMuLS0LVFNY+SVVFBqe81ITE4L4A==}
     dependencies:
       '@yorjs/shared': 1.0.0
     dev: false
