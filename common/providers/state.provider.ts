@@ -5,10 +5,10 @@ export interface Ref<T> {
   value: T
 }
 
-export const IProxy = defineInterface<{ ref: <T>(value: T) => Ref<T> }>()
+export const IState = defineInterface<{ useRef: <T>(value: T) => Ref<T> }>()
 
-export const proxy = defineProvider().implements(IProxy).setup(() => ({
-  ref(initialState) {
+export const state = defineProvider().implements(IState).setup(() => ({
+  useRef(initialState) {
     const [state, setState] = useState(initialState)
 
     return new Proxy({ value: state }, {

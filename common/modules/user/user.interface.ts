@@ -1,5 +1,5 @@
 import { defineInterface } from '@yorjs/core'
-import type { Ref } from '../../providers/proxy.provider'
+import type { Ref } from '../../providers/state.provider'
 import type { AccessTokenDto } from './user.dto'
 
 export const IUserController = defineInterface<{

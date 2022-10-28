@@ -1,11 +1,11 @@
 import { defineProvider } from '@yorjs/core'
-import { IProxy } from '../../providers/proxy.provider'
+import { IState } from '../../providers/state.provider'
 import { IUserController, IUserService } from './user.interface'
 
-export const userController = defineProvider().implements(IUserController).inject(IProxy, IUserService).setup((proxy, userService) => {
-  const username = proxy.ref('')
-  const password = proxy.ref('')
-  const token = proxy.ref('')
+export const userController = defineProvider().implements(IUserController).inject(IState, IUserService).setup(({ useRef }, userService) => {
+  const username = useRef('')
+  const password = useRef('')
+  const token = useRef('')
 
   const signIn = async () => {
     const { token: t } = await userService.signIn(username.value, password.value)
