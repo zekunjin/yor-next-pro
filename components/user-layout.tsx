@@ -8,7 +8,8 @@ const UserLayout = ({ children }: { children: ReactNode }) => (
   <Layout>
     <div className="w-screen h-screen flex flex-col items-center justify-center">
       <Box className="w-screen h-screen flex">
-        <Box className="flex items-center justify-center flex-1 bg-gray-100">
+        <Box className="flex flex-col items-center justify-center flex-1 bg-gray-100">
+          <Box className="text-3xl font-bold mb-12">Hi, Welcome back</Box>
           <Image src={illustrationDashboard} alt="illustration dashboard" />
         </Box>
 

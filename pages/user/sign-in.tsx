@@ -21,10 +21,10 @@ const UserSignIn = () => {
       <Box className="w-full h-full flex flex-col items-center justify-center">
         <Box className="w-full px-16 flex flex-col box-border">
           <Box>
-            <h3>Sign In</h3>
+            <Box className="text-xl font-bold">Sign In</Box>
             <Box className="mt-4 text-xs">
               <span>New user?</span>
-              <Link className="font-bold ml-1" href="/">Create an account</Link>
+              <Link className="font-bold ml-1" href="/user/sign-up">Create an account</Link>
             </Box>
           </Box>
 
