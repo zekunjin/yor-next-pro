@@ -4,6 +4,7 @@ specifiers:
   '@antfu/eslint-config': ^0.27.0
   '@emotion/react': ^11.10.4
   '@emotion/styled': ^11.10.4
+  '@mui/lab': 5.0.0-alpha.105
   '@mui/material': ^5.10.11
   '@types/node': 18.11.5
   '@types/react': 18.0.23
@@ -23,6 +24,7 @@ specifiers:
 dependencies:
   '@emotion/react': 11.10.4_i2izv7j3km4zzxbpzq2d4xtojy
   '@emotion/styled': 11.10.4_acpyfrvj6vjxfu5qsyzb4chs4y
+  '@mui/lab': 5.0.0-alpha.105_ecp5z24755gvkr4sb5bknzvyby
   '@mui/material': 5.10.11_uliubsjsh475tiqsbpj3cyikla
   '@yorjs/core': 2.0.0-rc.2
   next: 13.0.0_biqbaboplfbrettd7655fr4n2y
@@ -384,6 +386,40 @@ packages:
 
   /@mui/core-downloads-tracker/5.10.11:
     resolution: {integrity: sha512-u5ff+UCFDHcR8MoQ8tuJR4c35vt7T/ki3aMEE2O3XQoGs8KJSrBiisFpFKyldg9/W2NSyoZxN+kxEGIfRxh+9Q==}
+    dev: false
+
+  /@mui/lab/5.0.0-alpha.105_ecp5z24755gvkr4sb5bknzvyby:
+    resolution: {integrity: sha512-W4AUf8juwPfOomOGHL1Jasr6LW1mlcZUMlad/uf8AKYFOILX1Toonvdqi00iP+xMRndX88/RmLbJy0+nDZiKsg==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      '@emotion/react': ^11.5.0
+      '@emotion/styled': ^11.3.0
+      '@mui/material': ^5.0.0
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      '@emotion/react':
+        optional: true
+      '@emotion/styled':
+        optional: true
+      '@types/react':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.19.4
+      '@emotion/react': 11.10.4_i2izv7j3km4zzxbpzq2d4xtojy
+      '@emotion/styled': 11.10.4_acpyfrvj6vjxfu5qsyzb4chs4y
+      '@mui/base': 5.0.0-alpha.103_yyloj25vv7zmuk3uh3z5jonzqq
+      '@mui/material': 5.10.11_uliubsjsh475tiqsbpj3cyikla
+      '@mui/system': 5.10.10_tafe65s2bnwvwedm7hukwbltla
+      '@mui/types': 7.2.0_@types+react@18.0.23
+      '@mui/utils': 5.10.9_react@18.2.0
+      '@types/react': 18.0.23
+      clsx: 1.2.1
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-is: 18.2.0
     dev: false
 
   /@mui/material/5.10.11_uliubsjsh475tiqsbpj3cyikla:
