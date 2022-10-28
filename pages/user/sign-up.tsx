@@ -1,5 +1,5 @@
 import { Box } from '@mui/material'
-import UserLayout from '../../components/user-layout'
+import UserLayout from '../../layouts/user-layout'
 
 const UserSignUp = () => {
   return (
