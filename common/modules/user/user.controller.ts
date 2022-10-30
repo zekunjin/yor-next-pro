@@ -12,5 +12,5 @@ export const userController = defineProvider().implements(IUserController).injec
     token.value = t
   }
 
-  return { username, password, token, signIn }
+  return { username, password, token, signIn, userService }
 })

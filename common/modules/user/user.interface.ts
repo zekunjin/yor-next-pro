@@ -7,6 +7,9 @@ export const IUserController = defineInterface<{
   password: Ref<string>
   token: Ref<string>
   signIn: () => Promise<void>
+  userService: {
+    signIn: (username: string, password: string) => Promise<AccessTokenDto>
+  }
 }>()
 
 export const IUserService = defineInterface<{
