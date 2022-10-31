@@ -1,20 +1,18 @@
 import { useModule } from '@yorjs/core'
 import Link from 'next/link'
-import { signIn } from 'next-auth/react'
 import { LoadingButton } from '@mui/lab'
 import { Box, TextField } from '@mui/material'
 import { useState } from 'react'
 import UserLayout from '../../components/user-layout'
 import { userModule } from '../../common/modules/user/user.module'
-import { AuthProviderKey } from '../../common/enums/auth-provider-key.enum'
 
 const UserSignIn = () => {
-  const { username, password } = useModule(userModule)
+  const { username, password, signIn } = useModule(userModule)
   const [loading, setLoading] = useState(false)
 
   const handleSignIn = async () => {
     setLoading(true)
-    await signIn(AuthProviderKey.JWT, { username: username.value, password: password.value, redirect: false })
+    await signIn()
     setLoading(false)
   }
 

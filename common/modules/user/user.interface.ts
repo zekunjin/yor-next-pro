@@ -1,4 +1,5 @@
 import { defineInterface } from '@yorjs/core'
+import type { AxiosPromise } from 'axios'
 import type { Ref } from '../../providers/state.provider'
 import type { AccessTokenDto, SignInDto } from './user.dto'
 
@@ -17,5 +18,5 @@ export const IUserService = defineInterface<{
 }>()
 
 export const IUserRepository = defineInterface<{
-  signIn: (data: SignInDto) => Promise<AccessTokenDto>
+  signIn: (data: SignInDto) => AxiosPromise<AccessTokenDto>
 }>()
