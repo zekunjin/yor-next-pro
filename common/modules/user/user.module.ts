@@ -6,5 +6,6 @@ import { userService } from './user.service'
 
 export const userModule = defineModule({
   controller: userController,
-  providers: [state, userService, userRepository]
+  providers: [state, userService, userRepository],
+  exports: [userService]
 })

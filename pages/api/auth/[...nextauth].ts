@@ -1,7 +1,7 @@
-import { useProvider } from '@yorjs/core'
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import { AuthProviderKey } from '../../../common/enums/auth-provider-key.enum'
+import { userModule } from '../../../common/modules/user/user.module'
 import { userService } from '../../../common/modules/user/user.service'
 
 export const authOptions = {
@@ -17,7 +17,7 @@ export const authOptions = {
       },
       async authorize(credentials) {
         try {
-          const { signIn } = useProvider(userService)
+          const { signIn } = userModule.useExport(userService)
           if (credentials) {
             const { token } = await signIn(credentials.username, credentials.password)
             return { id: token, token }
