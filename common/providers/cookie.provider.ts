@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import type { CookieSerializeOptions } from 'cookie'
 
 export const ICookie = defineInterface<{
-  get: (req: NextApiRequest, key: string, def: string) => any
+  get: (req: NextApiRequest, key: string, def?: string) => any
   set: (res: NextApiResponse, key: string, value: any, expire?: number) => void
   remove: (key: string) => void
   clear: () => void
@@ -31,7 +31,7 @@ export const cookie = defineProvider().implements(ICookie).setup(() => ({
   },
 
   set(res, key, value, expire) {
-    const options: CookieSerializeOptions = { }
+    const options: CookieSerializeOptions = { path: '/', sameSite: false }
     const stringifyValue = JSON.stringify({ value })
 
     if (expire)
