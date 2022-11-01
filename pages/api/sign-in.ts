@@ -12,9 +12,9 @@ const fakeSignIn = (_u: string, _p: string): Promise<{ data: { token: string } }
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const { set: setCookie } = utilsModule.useExport(cookie)
+  const { server: { set: setCookie } } = utilsModule.useExport(cookie)
   const { username, password } = await req.body
-  const { data } = await fakeSignIn(username, password)
-  setCookie(res, CookieKey.ACCESS_TOKEN, data)
-  res.end()
+  const { data: { token } } = await fakeSignIn(username, password)
+  setCookie(res, CookieKey.ACCESS_TOKEN, token)
+  res.status(200).json({})
 }
