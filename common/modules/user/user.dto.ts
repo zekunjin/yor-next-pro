@@ -5,4 +5,5 @@ export interface AccessTokenDto {
 export interface SignInDto {
   username: string
   password: string
+  [key: string]: string
 }

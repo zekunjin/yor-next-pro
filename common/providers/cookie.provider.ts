@@ -6,7 +6,7 @@ import { RequestHeader } from '../enums/request-header.enum'
 
 export const ICookie = defineInterface<{
   server: {
-    get: (req: NextApiRequest, key: string, def?: string) => any
+    get: (req: NextApiRequest | string, key: string, def?: string) => any
     set: (res: NextApiResponse, key: string, value: any, expire?: number) => void
   }
   client: {
@@ -34,10 +34,12 @@ export const cookie = defineProvider().implements(ICookie).setup(() => {
   return {
     server: {
       get(req, key, def = '') {
-        if (!req.headers?.cookie)
+        const str = typeof req === 'string' ? req : req.headers?.cookie
+
+        if (!str)
           return def
 
-        return getCookie(req.headers.cookie, key, def)
+        return getCookie(str, key, def)
       },
 
       set(res, key, value, expire) {

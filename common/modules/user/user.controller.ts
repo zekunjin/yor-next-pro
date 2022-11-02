@@ -5,12 +5,10 @@ import { IUserController, IUserService } from './user.interface'
 export const userController = defineProvider().implements(IUserController).inject(IState, IUserService).setup(({ useRef }, userService) => {
   const username = useRef('')
   const password = useRef('')
-  const token = useRef('')
 
   const signIn = async () => {
-    const { token: t } = await userService.signIn(username.value, password.value)
-    token.value = t
+    await userService.clientSignIn(username.value, password.value)
   }
 
-  return { username, password, token, signIn, userService }
+  return { username, password, signIn }
 })

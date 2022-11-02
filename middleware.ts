@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
+export const WHITELIST = ['/user/sign-in']
+
 export function middleware(request: NextRequest) {
   return NextResponse.redirect(new URL('/user/sign-in', request.url))
 }
