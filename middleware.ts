@@ -6,12 +6,12 @@ import { CookieKey } from './common/enums/cookie-key.enum'
 
 export const WHITELIST = ['/user/sign-in']
 
-export function middleware(request: NextRequest) {
-  const { server: { get: getCookie } } = utilsModule.useExport(cookie)
-  const token = getCookie(request.headers.get('cookie') || '', CookieKey.ACCESS_TOKEN)
-
+export const middleware = (request: NextRequest) => {
   if (WHITELIST.includes(request.nextUrl.pathname))
     return NextResponse.next()
+
+  const { server: { get: getCookie } } = utilsModule.useExport(cookie)
+  const token = getCookie(request.headers.get('cookie') || '', CookieKey.ACCESS_TOKEN)
 
   if (token)
     return NextResponse.next()
