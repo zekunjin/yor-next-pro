@@ -3,17 +3,20 @@ import Link from 'next/link'
 import { LoadingButton } from '@mui/lab'
 import { Box, Stack, TextField } from '@mui/material'
 import { useState } from 'react'
-import UserLayout from '../../components/user-layout'
+import { useRouter } from 'next/router'
+import UserLayout from '../../components/layouts/user-layout'
 import { userModule } from '../../common/modules/user/user.module'
 
 const UserSignIn = () => {
   const { username, password, signIn } = useModule(userModule)
   const [loading, setLoading] = useState(false)
+  const router = useRouter()
 
   const handleSignIn = async () => {
     setLoading(true)
     await signIn()
     setLoading(false)
+    router.push('/dashboard')
   }
 
   return (
@@ -24,7 +27,7 @@ const UserSignIn = () => {
             <Box className="text-xl font-bold">Sign In</Box>
             <Box className="mt-4 text-xs">
               <span>New user?</span>
-              <Link className="font-bold ml-1" href="/user/sign-up">Create an account</Link>
+              <Link className="font-bold ml-1" href="/">Create an account</Link>
             </Box>
           </Box>
 

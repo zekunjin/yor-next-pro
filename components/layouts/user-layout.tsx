@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { Box } from '@mui/material'
 import Image from 'next/image'
-import illustrationDashboard from '../assets/illustration_dashboard.png'
+import illustrationDashboard from '../../assets/illustration_dashboard.png'
 import Layout from './layout'
 
 const UserLayout = ({ children }: { children: ReactNode }) => (
