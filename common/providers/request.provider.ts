@@ -8,14 +8,16 @@ import { ICookie } from './cookie.provider'
 export const IRequest = defineInterface<AxiosInstance>()
 
 export const request = defineProvider().implements(IRequest).inject(ICookie).setup(({ client: { get: getCookie } }) => {
-  const axiosInstance = axios.create({ baseURL: '/' })
+  // const axiosInstance = axios.create({ baseURL: '/' })
 
-  axiosInstance.interceptors.request.use((config) => {
-    if (config?.headers)
-      config.headers[RequestHeader.AUTHORIZATION] = getCookie(CookieKey.ACCESS_TOKEN)
+  // axiosInstance.interceptors.request.use((config) => {
+  //   if (config?.headers)
+  //     config.headers[RequestHeader.AUTHORIZATION] = getCookie(CookieKey.ACCESS_TOKEN)
 
-    return config
-  })
+  //   return config
+  // })
 
-  return axiosInstance
+  return (_args: any) => {
+    return Promise.resolve({ data: { a: 1 } })
+  }
 })
