@@ -1,12 +1,12 @@
 import { defineModule } from '@yorjs/core'
-import { request } from '../../providers/request.provider'
-import { state } from '../../providers/state.provider'
+import { utilsModule } from '../utils/utils.module'
 import { userController } from './user.controller'
 import { userRepository } from './user.repository'
 import { userService } from './user.service'
 
 export const userModule = defineModule({
   controller: userController,
-  providers: [state, userService, userRepository, request],
+  providers: [userService, userRepository],
+  imports: [utilsModule],
   exports: [userService]
 })
