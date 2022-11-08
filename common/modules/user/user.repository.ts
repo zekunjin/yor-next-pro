@@ -6,8 +6,11 @@ export const userRepository = defineProvider().implements(IUserRepository).injec
   async clientSignIn(data) {
     const parse = (r: Record<string, string>): string => {
       const arr = []
-      for (const key in r)
+      for (const key in r) {
+        if (!r[key])
+          continue
         arr.push(`${key}=${r[key]}`)
+      }
 
       return arr.join('&')
     }
