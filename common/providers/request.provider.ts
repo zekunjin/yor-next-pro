@@ -17,5 +17,9 @@ export const request = defineProvider().implements(IRequest).inject(ICookie).set
     return config
   })
 
+  axiosInstance.interceptors.response.use((res) => {
+    return res.data
+  }, () => {})
+
   return axiosInstance
 })

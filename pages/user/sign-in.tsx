@@ -14,9 +14,13 @@ const UserSignIn = () => {
 
   const handleSignIn = async () => {
     setLoading(true)
-    await signIn()
-    setLoading(false)
-    router.push('/dashboard')
+    try {
+      await signIn()
+      router.push('/dashboard')
+    }
+    catch {
+      setLoading(false)
+    }
   }
 
   return (

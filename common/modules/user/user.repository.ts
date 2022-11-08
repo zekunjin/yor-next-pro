@@ -12,7 +12,10 @@ export const userRepository = defineProvider().implements(IUserRepository).injec
       return arr.join('&')
     }
 
-    await fetch(`/api/sign-in?${parse(data)}`)
+    const res = await fetch(`/api/sessions?${parse(data)}`)
+
+    if (!res.ok)
+      throw new Error(res.statusText)
   },
 
   serverSignIn(_data) {

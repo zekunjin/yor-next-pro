@@ -7,7 +7,7 @@ export const userController = defineProvider().implements(IUserController).injec
   const password = useRef('')
 
   const signIn = async () => {
-    await userService.clientSignIn(username.value, password.value)
+    return userService.clientSignIn(username.value, password.value)
   }
 
   return { username, password, signIn }

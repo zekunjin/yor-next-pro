@@ -1,4 +1,4 @@
 export enum RequestMethod {
-  POST = 'post',
-  GET = 'get'
+  POST = 'POST',
+  GET = 'GET'
 }
