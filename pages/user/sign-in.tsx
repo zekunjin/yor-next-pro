@@ -4,8 +4,8 @@ import { LoadingButton } from '@mui/lab'
 import { Box, Stack, TextField } from '@mui/material'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
-import UserLayout from '../../components/layouts/user-layout'
-import { userModule } from '../../common/modules/user/user.module'
+import UserLayout from 'components/layouts/user-layout'
+import { userModule } from 'common/modules/user/user.module'
 
 const UserSignIn = () => {
   const { username, password, signIn } = useModule(userModule)

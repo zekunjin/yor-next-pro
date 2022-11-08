@@ -1,4 +1,4 @@
-import BaseLayout from '../../components/layouts/base-layout'
+import BaseLayout from 'components/layouts/base-layout'
 
 const Dashboard = () => {
   return (
