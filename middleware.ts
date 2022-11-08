@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { utilsModule } from './common/modules/utils/utils.module'
-import { cookie } from './common/providers/cookie.provider'
-import { CookieKey } from './common/enums/cookie-key.enum'
+import { utilsModule } from 'common/modules/utils/utils.module'
+import { cookie } from 'common/providers/cookie.provider'
+import { CookieKey } from 'common/enums/cookie-key.enum'
 
 export const WHITELIST = ['/user/sign-in']
 
