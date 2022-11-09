@@ -25,15 +25,15 @@ const Sidebar = ({ items }: { items: SideBarItem[] } = { items: [] }) => {
             onClick={() => router.push(path)}
           >
             <ListItemIcon>
-              {icon(isActive(path) ? primary.main : text.primary)}
+              {icon(isActive(path) ? primary.main : text.secondary)}
             </ListItemIcon>
 
             <ListItemText
               primary={
                 <Typography
                   variant="body2"
-                  sx={{ color: isActive(path) ? primary.main : text.primary }}
-                  className={ isActive(path) ? 'font-semibold' : 'font-normal' }
+                  sx={{ color: isActive(path) ? primary.main : text.secondary }}
+                  className={ isActive(path) ? 'font-semibold' : 'font-medium' }
                 >
                   {label}
                 </Typography>
