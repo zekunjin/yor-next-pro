@@ -7,18 +7,29 @@ interface SideBarItem {
 }
 
 const SideBar = ({ items }: { items: SideBarItem[] } = { items: [] }) => {
-  const theme = useTheme()
-  const { pathname } = useRouter()
+  const { typography: { fontSize }, palette: { primary, text } } = useTheme()
+  const router = useRouter()
+
+  const isActive = (path: string) => router.pathname === path
 
   return (
     <List>
-      <ListItem>
+      <ListItem className="block">
        {
          items.map(({ path, label }) => (
-           <ListItemButton key={path} selected={pathname === path}>
+           <ListItemButton key={path} selected={isActive(path)} onClick={() => router.push(path)}>
               <ListItemText
                 primary={
-                  <Typography sx={{ ...theme.typography.subtitle2 }}>{label}</Typography>
+                  <Typography
+                    variant={isActive(path) ? 'inherit' : 'body1'}
+                    sx={{
+                      color: isActive(path) ? primary.main : text.secondary,
+                      fontSize
+                    }}
+                    className="transition-all"
+                  >
+                   {label}
+                  </Typography>
                 }
               />
             </ListItemButton>

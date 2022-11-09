@@ -4,12 +4,15 @@ import type { ReactNode } from 'react'
 import Layout from './layout'
 
 const BaseLayout = ({ children }: { children: ReactNode }) => {
-  const menus = [{ path: '/dashboard', label: 'Dashboard' }]
+  const menus = [
+    { path: '/dashboard', label: 'Dashboard' },
+    { path: '/account', label: 'Account' }
+  ]
 
   return (
     <Layout>
       <Box className="w-screen h-screen flex">
-        <Box className="w-64">
+        <Box className="w-64 shadow">
           <SideBar items={menus} />
         </Box>
 
