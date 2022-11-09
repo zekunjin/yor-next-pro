@@ -28,7 +28,7 @@ const SideBar = ({ items }: { items: SideBarItem[] } = { items: [] }) => {
                     }}
                     className="transition-all"
                   >
-                   {label}
+                    {label}
                   </Typography>
                 }
               />
