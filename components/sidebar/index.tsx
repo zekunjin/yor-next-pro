@@ -33,7 +33,7 @@ const Sidebar = ({ items }: { items: SideBarItem[] } = { items: [] }) => {
                 <Typography
                   variant="body2"
                   sx={{ color: isActive(path) ? primary.main : text.secondary }}
-                  className={ isActive(path) ? 'font-semibold' : 'font-medium' }
+                  className="font-semibold"
                 >
                   {label}
                 </Typography>
