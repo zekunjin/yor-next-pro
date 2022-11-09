@@ -1,9 +1,10 @@
-import { List, ListItemButton, ListItemText, Typography, useTheme } from '@mui/material'
+import { List, ListItemButton, ListItemIcon, ListItemText, Typography, useTheme } from '@mui/material'
 import { useRouter } from 'next/router'
 
 interface SideBarItem {
   path: string
   label: string
+  icon: (color: string) => JSX.Element
 }
 
 const Sidebar = ({ items }: { items: SideBarItem[] } = { items: [] }) => {
@@ -15,7 +16,7 @@ const Sidebar = ({ items }: { items: SideBarItem[] } = { items: [] }) => {
   return (
     <List className="h-full shadow-md box-border">
       {
-        items.map(({ path, label }) => (
+        items.map(({ path, label, icon }) => (
           <ListItemButton
             key={path}
             selected={isActive(path)}
@@ -23,6 +24,10 @@ const Sidebar = ({ items }: { items: SideBarItem[] } = { items: [] }) => {
             className="rounded"
             onClick={() => router.push(path)}
           >
+            <ListItemIcon>
+              {icon(isActive(path) ? primary.main : text.primary)}
+            </ListItemIcon>
+
             <ListItemText
               primary={
                 <Typography
