@@ -26,7 +26,7 @@ const UserSignIn = () => {
   return (
     <UserLayout>
       <Box className="w-full h-full flex flex-col items-center justify-center">
-        <Stack spacing={2} className="w-full px-16 flex flex-col box-border">
+        <Stack spacing={2} className="w-full px-14 flex flex-col box-border">
           <Box>
             <Box className="text-xl font-bold">Sign In</Box>
             <Box className="mt-4 text-xs">
